@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>	
+<title>julia Advent Calendar day 14</title>
+<meta charset="utf-8">
+    </head>
+    <style type="text/css">
+        body{
+        padding: 50px;
+        }
+        
+    </style>    
+<body>
+<p>普段はpythonを使ってバイオ系の画像処理をやってます。</p>
+<p>pythonとmatlabを行ったり来たりしていた時期もあったのですが、</p>
+<p>基本的にpythonユーザーです。</p>
+<br>
+<p>で、ちょろっとjuliaを触る機会があったので、備忘録もかねてメモです。</p>
+<br>
+<br>
+<p><font size=6pt>[やりたいこと]</font></p>
+<p>jupyter上でjuliaでcsvファイルを開いてグラフ描画する.</p>
+<br>
+<p><font size=6pt>[環境]</font></p>
+<p>windows10,jupyter,juliaのversionは1.1,jupyter notebookにjuliaは入っている状態</p>
+<br>
+<p><font size=6pt>[やったこと]</font></p>
+<br>
+<p>とりあえず,jupyterを立ち上げます。</p>
+<p>new notebookのところで新しいノートブックを作成しようとすると言語が選べるはずなのでjuliaを選択します。</p>
+<p>(デフォルトだとpythonになってることが多い気がする)</p>
+<br>
+<p>pythonとかでのimportにあたるのはjuliaではusingです。</p>
+<p>using csvでcsvを扱うためのモジュールをインポートします</p>
+<p>file = "*.csv"</p>
+<p>csv_read = CSV.File(file)</p>
+<p>とするとcsv_readにcsvファイル内の中身が読み込まれます</p>
+<p>juliaは1始まりなのでcsv_read[1]で一番目の行が読み込まれます。</p>
+<br>
+<p>plotは新しくインストールする必要があるのでjuliaのプロンプトを立ち上げ,</p>
+<p>julia>ではなく,(v1.1) pkg>のほうでadd Plotsと打ち込みます。</p>
+<img src="スライド1.png" width=600 hight=900>
+<p>julia> から pkg>に移るには　]キーを ,pkg> から　julia>　に移るには　backspaceです。</p>
+<p>(ヘンな仕様...)</p>
+<br>
+<P>このようにしてモジュールがそろったところでcsvの一行目の系列データを表示したかったのですが、そこでつっかかりました</p>
+<p>CSV.Rowは系列データを表すさいに1 = 0.0, 2 = 0.1, 3 = 0.0,,,,みたいな表し方をするため、そのまま系列データとして取り出せるわけではないようでした</P>
+<p>で、これを頑張って系列データとして可視化しようとしたのですが、今のところできてないです。</P>
+<p>可能になり次第更新します。</p>
+<br>
+<p>役に立たない駄文となってしまいましたが、初心者ということで勘弁してください。</p>
+</body>
